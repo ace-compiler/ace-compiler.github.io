@@ -28,6 +28,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 github:
+  is_project_page: true
   repository_url: "https://github.com/ace-compiler/ace-compiler"
 
 # Build settings
