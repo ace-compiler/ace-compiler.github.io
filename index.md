@@ -7,10 +7,13 @@ layout: default
 # Introduce ACE
 
 **FHE** stands as a revolutionary cryptographic technology that allows computations to be directly carried out on encrypted data without ever requiring decryption. This powerful technique facilitates the manipulation of secret data to ensure the computing party remains blind to the actual information, yet can deliver a valuable encrypted output.
+<div align="center">
 
 _Decrypt(Homo_Add(Encrypt(a), Encrypt(b))) == Add(a, b)_
 
 _Decrypt(Homo_Mult(Encrypt(a), Encrypt(b))) == Mult(a, b)_
+
+</div>
 
 **ACE** is designed for Privacy-Preserving Machine Learning (PPML) Inference Applications. In this scenario, the ML inference is deployed in the cloud and clients upload their input data to cloud and receive the inference output from the service. In conventional ML inference services, data and results are often transferred in plaintext. This practice leaves sensitive information vulnerable to privacy breaches. Symmetric Encryption can protect the privacy during data transmission. But it can't stop privacy leaks within the cloud infrastructure, where the service provider might access the data inadvertently or with malicious intent. With homomorphic encryption, ML inference can be performed directly on encrypted user data. This ensures that sensitive user data is protected against unauthorized access at all stages of the cloud-based inference service.
 
@@ -19,7 +22,6 @@ _Decrypt(Homo_Mult(Encrypt(a), Encrypt(b))) == Mult(a, b)_
 **ACE** takes pre-trained ML model as input and compile it into FHE program directly for both server side and client side. This makes **ACE** can be easily integrated into any existing ML framework like ONNX, PyTorch, TensorFlow ans others. In this way, the development of FHE application is greatly simplified. Developer won't need to study the mathematics foundations of FHE, APIs of FHE libraries and get rid of tedious details of parameter selection, FHE specific operation insertion, noise and scale management, bootstrapping insertion, etc.
 
 <p align="center"><img src="assets/ace-ml-integ.png" width="75%"></p>
-
 
 **ACE** has a 5-levels of IR to compile the pre-trained ML model with Tensor types and operations into low-level Polynomial type and operations. Each phase takes input from predecessor, translate types and operations specific to higher level into current level. Analyzations and optimizations may be taken place both before and after the translation pass.
 
@@ -41,8 +43,7 @@ Runtime memory consumption to infer 1 image with single thread and compared witn
 
 <p align="center"><img src="assets/ace-rt-mem.png" width="50%"></p>
 
-Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite:
-
+Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite: <div align="center">
 
 | Model             | Unencrypted   | Encrypted  |
 | :---------------- | :------------ | :--------- |
@@ -53,6 +54,8 @@ Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite:
 | ResNet56          | 93.9%         | x          |
 | ResNet110         | 93.9%         | x          |
 
+
+</div>
 
 # Try ACE
 
@@ -108,7 +111,12 @@ Once the command finished successfully, the compiler executable is built in rele
 
 We provide a script named 'accuracy.sh' to test the inference accuracy with different models and number of images. 'accuracy.sh' takes 3 parameters, first one is the model name, which can be:
 
-'resnet20_cifar10', 'resnet32_cifar10', 'resnet32_cifar100', 'resnet44_cifar10', 'resnet56_cifar10' or 'resnet110_cifar10'
+*   resnet20_cifar10
+*   resnet32_cifar10
+*   resnet32_cifar100
+*   resnet44_cifar10
+*   resnet56_cifar10
+*   resnet110_cifar10
 
 The second parameter is the index of image to start the test. The third parameter is the index of image to end the testing. The last image index is excluded, which means 'accuracy resnet20_cifar10 0 10' will test 10 images from 0 to 9 with ResNet20 model.
 
@@ -116,6 +124,8 @@ Inside the docker environment, run the command below to evaluate ResNet inferenc
 
 ```shell
 # ./scripts/accuracy.sh resnet20_cifar10 0 10
+INFO: infer images [0, 9] from cifar-10 ../cifar/test_batch.bin.
+...
 ```
 
 Enjoy!
