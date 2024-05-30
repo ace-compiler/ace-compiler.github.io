@@ -7,6 +7,7 @@ layout: default
 # Introduce ACE
 
 **FHE** stands as a revolutionary cryptographic technology that allows computations to be directly carried out on encrypted data without ever requiring decryption. This powerful technique facilitates the manipulation of secret data to ensure the computing party remains blind to the actual information, yet can deliver a valuable encrypted output.
+
 <div align="center">
 
 _Decrypt(Homo_Add(Encrypt(a), Encrypt(b))) == Add(a, b)_
@@ -43,7 +44,9 @@ Runtime memory consumption to infer 1 image with single thread and compared witn
 
 <p align="center"><img src="assets/ace-rt-mem.png" width="50%"></p>
 
-Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite: <div align="center">
+Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite:
+
+<div align="center">
 
 | Model             | Unencrypted   | Encrypted  |
 | :---------------- | :------------ | :--------- |
@@ -53,7 +56,6 @@ Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite: <di
 | ResNet44          | 92.5%         | x          |
 | ResNet56          | 93.9%         | x          |
 | ResNet110         | 93.9%         | x          |
-
 
 </div>
 
