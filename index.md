@@ -2,7 +2,7 @@
 layout: default
 ---
 
-**ACE** is an Fully Homomorphic Encryption (FHE) Compiler Framework for automating Neural Network (NN) Inference. **ACE** takes pre-trained ONNX model as input and direcltly generating C/C++ programs to perform NN inference on encrypted data.
+**ACE** is an Fully Homomorphic Encryption (FHE) Compiler Framework for automating Neural Network (NN) Inference. ACE takes pre-trained ONNX model as input and direcltly generating C/C++ programs to perform NN inference on encrypted data.
 
 # Introduce ACE
 
@@ -12,21 +12,21 @@ _Decrypt(Homo_Add(Encrypt(a), Encrypt(b))) == Add(a, b)_
 
 _Decrypt(Homo_Mult(Encrypt(a), Encrypt(b))) == Mult(a, b)_
 
-**ACE** is designed for Privacy-Preserving Machine Learning (PPML) Inference Applications. In this scenario, the ML inference is deployed in the cloud and clients upload their input data to cloud and receive the inference output from the service. In conventional ML inference services, data and results are often transferred in plaintext. This practice leaves sensitive information vulnerable to privacy breaches. Symmetric Encryption can protect the privacy during data transmission. But it can't stop privacy leaks within the cloud infrastructure, where the service provider might access the data inadvertently or with malicious intent. With homomorphic encryption, ML inference can be performed directly on encrypted user data. This ensures that sensitive user data is protected against unauthorized access at all stages of the cloud-based inference service.
+ACE is designed for Privacy-Preserving Machine Learning (PPML) Inference Applications. In this scenario, the ML inference is deployed in the cloud and clients upload their input data to cloud and receive the inference output from the service. In conventional ML inference services, data and results are often transferred in plaintext. This practice leaves sensitive information vulnerable to privacy breaches. Symmetric Encryption can protect the privacy during data transmission. But it can't stop privacy leaks within the cloud infrastructure, where the service provider might access the data inadvertently or with malicious intent. With homomorphic encryption, ML inference can be performed directly on encrypted user data. This ensures that sensitive user data is protected against unauthorized access at all stages of the cloud-based inference service.
 
 <p align="center"><img src="assets/ace-ppml.png" width="40%"></p>
 
-**ACE** takes pre-trained ML model as input and compile it into FHE program directly for both server side and client side. This makes **ACE** can be easily integrated into any existing ML framework like ONNX, PyTorch, TensorFlow ans others. In this way, the development of FHE application is greatly simplified. Developer won't need to study the mathematics foundations of FHE, APIs of FHE libraries and get rid of tedious details of parameter selection, FHE specific operation insertion, noise and scale management, bootstrapping insertion, etc.
+ACE takes pre-trained ML model as input and compile it into FHE program directly for both server side and client side. This makes ACE can be easily integrated into any existing ML framework like ONNX, PyTorch, TensorFlow ans others. In this way, the development of FHE application is greatly simplified. Developer won't need to study the mathematics foundations of FHE, APIs of FHE libraries and get rid of tedious details of parameter selection, FHE specific operation insertion, noise and scale management, bootstrapping insertion, etc.
 
-<p align="center"><img src="assets/ace-ml-integ.png" width="75%"></p>
+<p align="center"><img src="assets/ace-ml-integ.png" width="80%"></p>
 
-**ACE** has a 5-levels of IR to compile the pre-trained ML model with Tensor types and operations into low-level Polynomial type and operations. Each phase takes input from predecessor, translate types and operations specific to higher level into current level. Analyzations and optimizations may be taken place both before and after the translation pass.
+ACE has a 5-levels of IR to compile the pre-trained ML model with Tensor types and operations into low-level Polynomial type and operations. Each phase takes input from predecessor, translate types and operations specific to higher level into current level. Analyzations and optimizations may be taken place both before and after the translation pass.
 
-<p align="center"><img src="assets/ace-arch.png" width="80%"></p>
+<p align="center"><img src="assets/ace-arch.png" width="90%"></p>
 
 # Evaluate ACE
 
-We evaluated **ACE** with ResNet, a typical DNN network for image recognition. The test suite is CIFAR. Pre-trained models like ResNet20/32/44/56, were directly downloaded from GitHUB. ResNet110 is trained from scratch with CIFAR training set.
+We evaluated ACE with ResNet, a typical DNN network for image recognition. The test suite is CIFAR. Pre-trained models like ResNet20/32/44/56, were directly downloaded from GitHUB. ResNet110 is trained from scratch with CIFAR training set.
 
 Compile time is measured on different size of ResNet model:
 
