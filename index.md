@@ -35,7 +35,7 @@ Compile time is measured on different size of ResNet model:
 
 Runtime performance to infer 1 image with single thread and compared with ICML'22 FHE-MP-CNN:
 
-<img align="center" src="assets/ace-rt-perf.png" width="50%">
+<p align="center"><img align="center" src="assets/ace-rt-perf.png" width="50%"></p>
 
 Runtime memory consumption to infer 1 image with single thread and compared witn ICML'22 FHE-MP-CNN:
 
@@ -43,6 +43,8 @@ Runtime memory consumption to infer 1 image with single thread and compared witn
 
 Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite:
 <p align="center">
+
+
 
 | Model             | Unencrypted   | Encrypted  |
 | :---------------- | :------------ | :--------- |
