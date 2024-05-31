@@ -31,11 +31,11 @@ Compile times were measured for handling ResNet models of different sizes:
 
 <p align="center"><img src="assets/ace-ct-perf.png" width="50%"></p>
 
-Runtime performance for performing per-image encrypted inference on a single CPU (left bars) was compared with ICML'22 <a href="https://github.com/snu-ccl/FHE-MP-CNN">FHE-MP-CNN</a> (right bar):
+Runtime performance for performing per-image encrypted inference on a single CPU (left bars) was compared with <a href="https://github.com/snu-ccl/FHE-MP-CNN">FHE-MP-CNN</a> (right bar):
 
 <p align="center"><img align="center" src="assets/ace-rt-perf.png" width="50%"></p>
 
-Runtime memory consumption for performing per-image encrypted inference on a single CPU (left bars) was compared with ICML'22 <a href="https://github.com/snu-ccl/FHE-MP-CNN">FHE-MP-CNN</a> (righr bar):
+Runtime memory consumption for performing per-image encrypted inference on a single CPU (left bars) was compared with <a href="https://github.com/snu-ccl/FHE-MP-CNN">FHE-MP-CNN</a> (righr bar):
 
 <p align="center"><img src="assets/ace-rt-mem.png" width="50%"></p>
 
@@ -70,6 +70,8 @@ To run each ResNet model compiled by ACE, an x86-64 based system with the follow
 To speed up the experiment on measuring accuracy under encrypted inference, a CPU with 32 or more cores and 256 GB or more memory is highly recommended.
 
 We provide a Dockerfile to simplify setting up the software development and testing environment. Docker must be supported by the host OS. Ubuntu Linux 20.04 LTS is recommended for running the Docker to try the ACE compiler.
+
+## Build and test ACE
 
 Follow the steps listed in <a href="https://github.com/ace-compiler/ace-compiler/blob/main/README.md">README.md</a> to build and test the ACE Compiler.
 
