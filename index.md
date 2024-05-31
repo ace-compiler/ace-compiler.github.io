@@ -8,9 +8,13 @@ layout: default
 
 FHE stands as a revolutionary cryptographic technology that allows computations to be directly carried out on encrypted data without ever requiring decryption. This powerful technique facilitates the manipulation of secret data to ensure the computing party remains blind to the actual information, yet can deliver a valuable encrypted output.
 
+<div align="center">
+
 _Decrypt(Homo_Add(Encrypt(a), Encrypt(b))) == Add(a, b)_
 
 _Decrypt(Homo_Mult(Encrypt(a), Encrypt(b))) == Mult(a, b)_
+
+</div>
 
 **ACE** is designed for Privacy-Preserving Machine Learning (PPML) Inference Applications. In this scenario, the ML inference is deployed in the cloud and clients upload their input data to cloud and receive the inference output from the service. In conventional ML inference services, data and results are often transferred in plaintext. This practice leaves sensitive information vulnerable to privacy breaches. Symmetric Encryption can protect the privacy during data transmission. But it can't stop privacy leaks within the cloud infrastructure, where the service provider might access the data inadvertently or with malicious intent. With homomorphic encryption, ML inference can be performed directly on encrypted user data. This ensures that sensitive user data is protected against unauthorized access at all stages of the cloud-based inference service.
 
@@ -26,17 +30,17 @@ _Decrypt(Homo_Mult(Encrypt(a), Encrypt(b))) == Mult(a, b)_
 
 # Evaluate ACE
 
-We evaluated ACE with ResNet, a typical DNN network for image recognition. The test suite is CIFAR. Pre-trained models like ResNet20/32/44/56, were directly downloaded from GitHUB. ResNet110 is trained from scratch with CIFAR training set.
+We evaluated ACE with ResNet, a typical DNN network for image recognition. The test suite is CIFAR. Pre-trained models like ResNet20/32/44/56, were directly downloaded from GitHUB. ResNet110 is trained from scratch with CIFAR training set. The experiments were done in a Docker container (version 25.0.1) on a Linux server (Ubuntu Linux 20.04 LTS) with an Intel Xeon Platinum 8369B CPU @2.70GHz and 512 GB memory.
 
 Compile time is measured on different size of ResNet model:
 
 <p align="center"><img src="assets/ace-ct-perf.png" width="50%"></p>
 
-Runtime performance to infer 1 image with single thread and compared with ICML'22 FHE-MP-CNN:
+Runtime performance to infer 1 image with single thread (left bar) and compared with ICML'22 FHE-MP-CNN (right bar) https://github.com/snu-ccl/FHE-MP-CNN:
 
 <p align="center"><img align="center" src="assets/ace-rt-perf.png" width="50%"></p>
 
-Runtime memory consumption to infer 1 image with single thread and compared witn ICML'22 FHE-MP-CNN:
+Runtime memory consumption to infer 1 image with single thread (left bar) and compared witn ICML'22 FHE-MP-CNN (righr bar):
 
 <p align="center"><img src="assets/ace-rt-mem.png" width="50%"></p>
 
@@ -44,12 +48,12 @@ Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite:
 
 | Model             | Unencrypted   | Encrypted  |
 | :---------------- | :------------ | :--------- |
-| ResNet20          | 90.9%         | x          |
-| ResNet32          | 92.8%         | x          |
-| ResNet32-CIFAR100 | 66.4%         | x          |
-| ResNet44          | 92.5%         | x          |
-| ResNet56          | 93.9%         | x          |
-| ResNet110         | 93.9%         | x          |
+| ResNet20          | 90.9%         | 91.2%      |
+| ResNet32          | 92.8%         | 92.8%      |
+| ResNet32-CIFAR100 | 66.4%         | 65.9%      |
+| ResNet44          | 92.5%         | 90.7%      |
+| ResNet56          | 93.9%         | 93.8%      |
+| ResNet110         | 94.0%         | 93.4%      |
 
 # Try ACE
 
