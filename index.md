@@ -8,13 +8,8 @@ layout: default
 
 FHE stands as a revolutionary cryptographic technology that allows computations to be directly carried out on encrypted data without ever requiring decryption. This powerful technique facilitates the manipulation of secret data to ensure the computing party remains blind to the actual information, yet can deliver a valuable encrypted output.
 
-<div align="center">
-
-_Decrypt(Homo_Add(Encrypt(a), Encrypt(b))) == Add(a, b)_
-
-_Decrypt(Homo_Mult(Encrypt(a), Encrypt(b))) == Mult(a, b)_
-
-</div>
+<div align="center"><i>Decrypt(Homo_Add(Encrypt(a), Encrypt(b))) == Add(a, b)</i></div>
+<div align="center"><i>Decrypt(Homo_Mult(Encrypt(a), Encrypt(b))) == Mult(a, b)</i></div>
 
 **ACE** is designed for Privacy-Preserving Machine Learning (PPML) Inference Applications. In this scenario, the ML inference is deployed in the cloud and clients upload their input data to cloud and receive the inference output from the service. In conventional ML inference services, data and results are often transferred in plaintext. This practice leaves sensitive information vulnerable to privacy breaches. Symmetric Encryption can protect the privacy during data transmission. But it can't stop privacy leaks within the cloud infrastructure, where the service provider might access the data inadvertently or with malicious intent. With homomorphic encryption, ML inference can be performed directly on encrypted user data. This ensures that sensitive user data is protected against unauthorized access at all stages of the cloud-based inference service.
 
