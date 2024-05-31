@@ -41,7 +41,7 @@ Runtime memory consumption to infer 1 image with single thread (left bar) and co
 
 Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite:
 
-<div align="center">
+<div style="margin-left: auto; margin-right: auto; width: 50%">
   <table>
     <tr><th>Model</th><th>Unencrypted</th><th>Encrypted</th></tr>
     <tr><td>ResNet20</td><td>90.9%</td><td>91.2%</td></tr>
