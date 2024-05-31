@@ -2,7 +2,7 @@
 layout: default
 ---
 
-**ACE** is a Fully Homomorphic Encryption (FHE) Compiler Framework for automating Neural Network (NN) Inference. ACE takes pre-trained ONNX model as input and direcltly generates C/C++ programs to perform NN inference on encrypted data.
+**ACE** is a Fully Homomorphic Encryption (FHE) Compiler Framework for automating Neural Network (NN) Inference. ACE takes pre-trained ONNX model as input and directly generates C/C++ programs to perform NN inference on encrypted data.
 
 # Introduce ACE
 
