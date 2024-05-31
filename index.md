@@ -41,15 +41,17 @@ Runtime memory consumption to infer 1 image with single thread (left bar) and co
 
 Inference accuracy on first 1000 images in CIFAR-10 or CIFAR-100 test suite:
 
-<table align="center">
-<tr><th>Model</th><th>Unencrypted</th><th>Encrypted</th><th></th></tr>
-<tr><td>ResNet20</td><td>90.9%</td><td>91.2%</td><td></td></tr>
-<tr><td>ResNet32</td><td>92.8%</td><td>92.8%</td><td></td></tr>
-<tr><td>ResNet32-CIFAR100</td><td>66.4%</td><td>65.9%</td><td></td></tr>
-<tr><td>ResNet44</td><td>92.5%</td><td>90.7%</td><td></td></tr>
-<tr><td>ResNet56</td><td>93.9%</td><td>93.8%</td><td></td></tr>
-<tr><td>ResNet110</td><td>94.0%</td><td>93.4%</td><td></td></tr>
-</table>
+<div align="center">
+  <table>
+    <tr><th>Model</th><th>Unencrypted</th><th>Encrypted</th></tr>
+    <tr><td>ResNet20</td><td>90.9%</td><td>91.2%</td></tr>
+    <tr><td>ResNet32</td><td>92.8%</td><td>92.8%</td></tr>
+    <tr><td>ResNet32-CIFAR100</td><td>66.4%</td><td>65.9%</td></tr>
+    <tr><td>ResNet44</td><td>92.5%</td><td>90.7%</td></tr>
+    <tr><td>ResNet56</td><td>93.9%</td><td>93.8%</td></tr>
+    <tr><td>ResNet110</td><td>94.0%</td><td>93.4%</td></tr>
+  </table>
+</div>
 
 # Try ACE
 
